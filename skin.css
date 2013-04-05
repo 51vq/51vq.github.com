@@ -20,8 +20,15 @@ body {
   height: 140px;
 }
 .lf_py{
+  background:url(images/logo.png);
+  width:230px;
+  height:100px;
+  cursor:pointer;
+}
+.radio{
   background: #fff;
+  margin: 0 auto;
+  padding-top: 150px;
   width:400px;
   height:600px;
-  cursor:pointer;
 }
