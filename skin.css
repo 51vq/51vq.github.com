@@ -16,10 +16,9 @@ body {
   width:230px;
   height:100px;
   cursor:pointer;
-  float:left;
 }
 #radio{
-  float:right;
-  width:600px;
+  width:400px;
   height:600px;
+  margin: 40px auto;
 }
