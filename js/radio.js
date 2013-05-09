@@ -28,7 +28,7 @@
 	window.radioReady = function(){
 		getFlash('radioAudio').play('dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D1367510401%26end%3D1372662685&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten');
 		var playBtn = get('playBtn');
-		var volume;//音量
+		var volume = 0.5;//音量
 		var isPlay;//是否在播放
 		playBtn.onclick = function(){
 			if(playBtn.className == 'ico_rdoPlay ico_stop_gray'){
@@ -46,7 +46,7 @@
 				getFlash('radioAudio').setVolume(0);
 			}else{
 				muteBtn.className = 'ico_rdoPlay ico_sound_on';
-				getFlash('radioAudio').setVolume(1);
+				getFlash('radioAudio').setVolume(volume);
 			}
 		}
 		var volumeBtn = get('radio_vol');
@@ -66,6 +66,7 @@
 				volumeBtn.style.left = '100px';
 				pos = 100;
 			}
+			volume = pos/100;
 			getFlash('radioAudio').setVolume(pos/100);
 			get('volume').style.width = volumeBtn.style.left;
 		}
