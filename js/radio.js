@@ -49,8 +49,8 @@
 			}else{
 				muteBtn.className = 'ico_rdoPlay ico_sound_on';
 				getFlash('radioAudio').setVolume(volume);
-				volumeBtn.style.left = volume + "px";
-				get('volume').style.width = volume + 'px';
+				volumeBtn.style.left = volume*100 + "px";
+				get('volume').style.width = volume*100 + 'px';
 			}
 		}
 		var volumeBtn = get('radio_vol');
