@@ -101,3 +101,20 @@ body {
     border-bottom: 0.5px solid #cccccc;
     border-right: 0.5px solid #cccccc;
 }
+#footer {
+  text-decoration: none;
+  clear: left;
+  display: block;
+  color: black;
+  padding: 0.3em 0.5em;
+  margin: 1800px auto 0;
+  font-weight: bold;
+  text-align: center;
+  -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  font-weight: normal;
+  color: #000;
+  width:960px;
+  z-index: 10000;
+}
