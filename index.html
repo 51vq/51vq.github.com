@@ -4,34 +4,39 @@
 	<head>
 		<title>vq乐享收音生活</title>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" href="skin.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="js/themes/apusic/operamasks-ui.min.css" type="text/css" charset="utf-8"/>
+		<link rel="stylesheet" href="css/skin.css" type="text/css" charset="utf-8"/>
+		<script src="js/jquery.js"></script>
+		<script src="js/operamasks-ui.min.js"></script>
+		<script src="js/radio.js"></script>
 	</head>
 	<body>
 		<div id='header'>
 			<div id='lf_py'>
 			</div>
-		</div>
-		<div id='radio'>
-			<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://get.adobe.com/cn/flashplayer/"
-				width="400" height="600" align="TL">
-				<param name="movie" value="images/Radio.swf">
-				<param name="quality" value="high">
-				<param name="wmode" value="transparent">
-				<param name="allowScriptAccess" value ="always" />
-				<embed src="images/Radio.swf" width="400" height="600" allowScriptAccess="always"
-				align="TL" quality="high" wmode='transparent'
-				pluginspage="http://get.adobe.com/cn/flashplayer/"
-				type="application/x-shockwave-flash">
+			<object width="1" height="1" id="radioAudio" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+				<param name="allowscriptaccess" value="always"/>
+				<param name="movie" value="images/Proxy.swf"/>
+				<param name="bgcolor" value="#cccccc"/>
+				<embed src="images/Proxy.swf" width="1" height="1" bgcolor="#cccccc" name="radioAudio" type="application/x-shockwave-flash" allowscriptaccess="always">
 				</embed>
 			</object>
-			<object type="application/x-shockwave-flash" data="http://tjs.sjs.sinajs.cn/t35/platform/static/swf/MP3Player.swf" width="1" height="1" id="radioAudio" style="visibility: visible;">
-				<param name="movie" value="http://tjs.sjs.sinajs.cn/t35/platform/static/swf/MP3Player.swf">
-				<param name="quality" value="high">
-				<param name="allowScriptAccess" value="always">
-				<param name="wmode" value="window">
-				<param name="allowFullscreen" value="true">
-				<param name="flashvars" value="dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D1367510401%26end%3D1372662685&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten">
-			</object>
+		</div>
+		<div id="radio_player" class="radio_player">
+			<div class='btn_play_div' id="btn_play_div">
+				<a id="playBtn" class="ico_rdoPlay ico_stop_gray" href="javascript:;"></a>
+				<a id="muteBtn" class="ico_rdoPlay ico_sound_on" href="javascript:;"></a>
+			</div>
+			<div class="lf_sound" id="volume_bar">
+				<div class="sound_wds">
+					<p style="width:50px;" class="bg_orgsound" id="volume"></p>
+					<em id="radio_vol" style="left:50px" class="ico_orgsound"></em> 
+				</div>
+			</div>
+			<div class="info" id="info"></div>
+		</div>
+		<div id='list' class='list'>
+			<div id="mytree2"></div>
 		</div>
 	</body>
 </html>
