@@ -84,7 +84,7 @@ body {
     display: block;
     cursor: pointer;
   left:0;
-  top:0;
+  top:1px;
   position: absolute;
 }
 .info{
