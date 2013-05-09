@@ -36,7 +36,7 @@
 				getFlash('radioAudio').setVolume(0);
 			}else{
 				playBtn.className = 'ico_rdoPlay ico_stop_gray';
-				getFlash('radioAudio').setVolume(1);
+				getFlash('radioAudio').setVolume(volume);
 			}
 		}
 		var muteBtn = get('muteBtn');
@@ -44,6 +44,7 @@
 			if(muteBtn.className == 'ico_rdoPlay ico_sound_on'){
 				muteBtn.className = 'ico_rdoPlay ico_sound_off';
 				getFlash('radioAudio').setVolume(0);
+				get('volume').style.width = ‘0px’;
 			}else{
 				muteBtn.className = 'ico_rdoPlay ico_sound_on';
 				getFlash('radioAudio').setVolume(volume);
