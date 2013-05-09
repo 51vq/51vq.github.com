@@ -84,6 +84,7 @@
 			dataSource : data,
 			simpleDataModel: true,
 			onSelect: function(node,event) {
+				playBtn.className = 'ico_rdoPlay ico_stop_gray';
 				getFlash('radioAudio').play(node.name);
 			}
 		});
