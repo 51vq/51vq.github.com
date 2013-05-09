@@ -44,7 +44,7 @@
 			if(muteBtn.className == 'ico_rdoPlay ico_sound_on'){
 				muteBtn.className = 'ico_rdoPlay ico_sound_off';
 				getFlash('radioAudio').setVolume(0);
-				get('volume').style.width = ‘0px’;
+				get('volume').style.width = '0px';
 			}else{
 				muteBtn.className = 'ico_rdoPlay ico_sound_on';
 				getFlash('radioAudio').setVolume(volume);
