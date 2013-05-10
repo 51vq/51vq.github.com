@@ -39,7 +39,7 @@
 	}
 	
 	getFlash = function(id){
-		if (navigator.appName.indexOf("Microsoft") != -1) {
+		if (window.navigator.appName.indexOf("Microsoft") != -1) {
 			return window[id];
         } else {
             return document[id];
