@@ -37,7 +37,8 @@
 		 }
 		return v;
 	}
-	window.getFlash = function(id){
+	
+	getFlash = function(id){
 		if (navigator.appName.indexOf("Microsoft") != -1) {
 			return window[id];
         } else {
