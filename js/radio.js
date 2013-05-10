@@ -16,10 +16,35 @@
 	window.get = function(id){
 		return window.document.getElementById(id);
 	}
-	
+	function getIEVersion(){
+		var v;
+		 if (document.documentMode == 10)
+			v = 10;
+		 else if (document.documentMode == 9)
+			v = 9;
+		 else if (window.postMessage)
+			v = 8;
+		 else if (window.XMLHttpRequest)
+			v = 7;
+		 else if (document.compatMode)
+			v = 6;
+		 else if (window.createPopup)
+			v = 5.5;
+		 else if (window.attachEvent)
+			v = 5;
+		 else if (document.all){
+			v = 4;
+		 }
+		return v;
+	}
 	window.getFlash = function(id){
 		if (navigator.appName.indexOf("Microsoft") != -1) {
-            return window.document.getElementById(id);
+			if(getIEVersion() >= 9){
+				return window.document.getElementById(id);
+			}else{
+				return window[id];
+			}
+            
         } else {
             return document[id];
         }
