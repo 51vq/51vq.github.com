@@ -51,6 +51,7 @@
 	}
 	
 	window.radioReady = function(){
+		alert(getFlash('radioAudio'));
 		getFlash('radioAudio').play('dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D1367510401%26end%3D1372662685&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten');
 		var playBtn = get('playBtn');
 		var volume = 0.5;//音量
