@@ -1,5 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>乐享收音生活</title>
@@ -10,7 +9,7 @@
 		<script src="js/operamasks-ui.min.js"></script>
 		<!--<script src="js/radio.js"></script>-->
 		<script>
-			/*var data = [{id:"n1",text:"热门电台",expanded:true},
+			var data = [{id:"n1",text:"热门电台",expanded:true},
                      {id:"n2",text:"按地区"},
                      {id:"n11",pid:"n1",text:"CRI怀旧金曲",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D1367510401%26end%3D1372662685&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten'},
 			         {id:"n12",pid:"n1",text:"中央人民广播电台中国之声-FM106.1",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043387760%26start%3D1367510401%26end%3D1370334002&volumn=0.5&uid=1052710881&eid=1043387760&pageURL=http://radio.weibo.com/china/fm1061?source=radio_change'},
@@ -18,9 +17,9 @@
 			         {id:"n14",pid:"n1",text:"中央人民广播电台经济之声-FM96.6",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1042929490%26start%3D1367510401%26end%3D1371297268&volumn=0.5&uid=1052710881&eid=1042929490&pageURL=http://radio.weibo.com/china/fm966?source=radio_change'},
 			         {id:"n21",pid:"n2",text:"移动"},
 			         {id:"n22",pid:"n2",text:"联通"},
-			         {id:"n23",pid:"n2",text:"电信"}];*/
+			         {id:"n23",pid:"n2",text:"电信"}];
 					 
-			/*get = function(id){
+			get = function(id){
 				return window.document.getElementById(id);
 			}
 			
@@ -56,13 +55,13 @@
 				} else {
 					return document[id];
 				}
-			}*/
+			}
 			
 			radioReady = function(){
 				//alert(getFlash('radioAudio'));
 				//alert(getFlash('radioAudio').play);
 				getFlash('radioAudio').play('dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D1367510401%26end%3D1372662685&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten');
-				/*var playBtn = get('playBtn');
+				var playBtn = get('playBtn');
 				var volume = 0.5;//音量
 				var isPlay;//是否在播放
 				playBtn.onclick = function(){
@@ -127,7 +126,7 @@
 						playBtn.className = 'ico_rdoPlay ico_stop_gray';
 						getFlash('radioAudio').play(node.name);
 					}
-				});*/
+				});
 			}
 		</script>
 	</head>
