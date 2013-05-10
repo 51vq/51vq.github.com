@@ -41,11 +41,14 @@
 	
 	window.getFlash = function(id){
 		if (window.navigator.appName.indexOf("Microsoft") != -1) {
-			return window.document.getElementById(id);
+			if(document.documentMode == 10){
+				return window.document.getElementById(id);
+			}else{
+				window[id];
+			}
         } else {
             return document[id];
         }
-		//return window.document.getElementById(id);
 	}
 	
 	window.radioReady = function(){
