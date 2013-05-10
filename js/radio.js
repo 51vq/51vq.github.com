@@ -39,12 +39,12 @@
 	}
 	
 	getFlash = function(id){
-		/*if (window.navigator.appName.indexOf("Microsoft") != -1) {
+		if (window.navigator.appName.indexOf("Microsoft") != -1) {
 			return window.document.getElementById(id);
         } else {
             return document[id];
-        }*/
-		return window.document.getElementById(id);
+        }
+		//return window.document.getElementById(id);
 	}
 	
 	window.radioReady = function(){
