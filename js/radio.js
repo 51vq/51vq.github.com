@@ -19,7 +19,7 @@
 	
 	window.getFlash = function(id){
 		if (navigator.appName.indexOf("Microsoft") != -1) {
-            return window[id];
+            return window.document.getElementById(id);
         } else {
             return document[id];
         }
