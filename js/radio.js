@@ -16,6 +16,7 @@
 	window.get = function(id){
 		return window.document.getElementById(id);
 	}
+	
 	function getIEVersion(){
 		var v;
 		 if (document.documentMode == 10)
@@ -38,7 +39,7 @@
 		return v;
 	}
 	
-	getFlash = function(id){
+	window.getFlash = function(id){
 		if (window.navigator.appName.indexOf("Microsoft") != -1) {
 			return window.document.getElementById(id);
         } else {
@@ -47,7 +48,10 @@
 		//return window.document.getElementById(id);
 	}
 	
-	window.onload = function(){
+	window.radioReady = function(){
+	    alert(getFlash('radioAudio'));
+		alert(getFlash('radioAudio').play);
+		getFlash('radioAudio').play('dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D1367510401%26end%3D1372662685&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten');
 		var playBtn = get('playBtn');
 		var volume = 0.5;//音量
 		var isPlay;//是否在播放
@@ -114,9 +118,5 @@
 				getFlash('radioAudio').play(node.name);
 			}
 		});
-	}
-	
-	window.radioReady = function(){
-		getFlash('radioAudio').play('dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D1367510401%26end%3D1372662685&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten');
 	}
 })(window);
