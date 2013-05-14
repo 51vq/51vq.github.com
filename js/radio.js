@@ -73,10 +73,11 @@
 		function mousemove(e){
 			var pos = e.clientX - startX;
 			volumeBtn.style.left = pos + "px";
-			
+			muteBtn.className = 'ico_rdoPlay ico_sound_on';
 			if(pos <= 0){
 				document.removeEventListener('mousemove',mousemove);
 				volumeBtn.style.left = '0px';
+				muteBtn.className = 'ico_rdoPlay ico_sound_off';
 				pos = 0;
 			}
 			
