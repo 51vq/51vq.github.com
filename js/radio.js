@@ -4,17 +4,38 @@
  */
 (function() {
 	var data = [{id:"n1",text:"热门电台",expanded:true},
-			 {id:"n2",text:"按地区"},
+			 //{id:"n2",text:"按地区"},
 			 {id:"n11",pid:"n1",text:"CRI怀旧金曲",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D1367510401%26end%3D1372662685&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten'},
 			 {id:"n12",pid:"n1",text:"中央人民广播电台中国之声-FM106.1",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043387760%26start%3D1367510401%26end%3D1370334002&volumn=0.5&uid=1052710881&eid=1043387760&pageURL=http://radio.weibo.com/china/fm1061?source=radio_change'},
 			 {id:"n13",pid:"n1",text:"中央人民广播电台音乐之声-FM90.0",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043390840%26start%3D1367510401%26end%3D1373874601&volumn=0.5&uid=1052710881&eid=1043390840&pageURL=http://radio.weibo.com/china/fm900?source=radio_change'},
 			 {id:"n14",pid:"n1",text:"中央人民广播电台经济之声-FM96.6",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1042929490%26start%3D1367510401%26end%3D1371297268&volumn=0.5&uid=1052710881&eid=1042929490&pageURL=http://radio.weibo.com/china/fm966?source=radio_change'},
-			 {id:"n21",pid:"n2",text:"移动"},
-			 {id:"n22",pid:"n2",text:"联通"},
-			 {id:"n23",pid:"n2",text:"电信"}];
+			 ];
 			 
 	function get(id){
 		return document.getElementById(id);
+	}
+	
+	function add(target,type,fun){
+		if(target.addEventListener){
+			target.addEventListener(type,fun);
+		}else{
+			target.attachEvent('on'+type,fun);
+		}
+	}
+	
+	function remove(target,type,fun){
+		if(target.removeEventListener){
+			target.removeEventListener(type,fun);
+		}else{
+			target.detachEvent('on'+type,fun);
+		}
+	}
+	
+	function once(target,type,fun){
+		add(target,type,function(){
+			fun();
+			remove(target,type,arguments.callee);
+		});
 	}
 	
 	function getFlash(id){
@@ -75,14 +96,12 @@
 			volumeBtn.style.left = pos + "px";
 			muteBtn.className = 'ico_rdoPlay ico_sound_on';
 			if(pos <= 0){
-				document.removeEventListener('mousemove',mousemove);
 				volumeBtn.style.left = '0px';
 				muteBtn.className = 'ico_rdoPlay ico_sound_off';
 				pos = 0;
 			}
 			
 			if(pos >= 100){
-				document.removeEventListener('mousemove',mousemove);
 				volumeBtn.style.left = '100px';
 				pos = 100;
 			}
@@ -91,14 +110,11 @@
 			get('volume').style.width = volumeBtn.style.left;
 		}
 		volumeBtn.onmousedown = function(e){
-			document.addEventListener('mousemove',mousemove);
-			document.addEventListener('mouseup',function(){
-				document.removeEventListener('mousemove',mousemove);
+			add(document,'mousemove',mousemove);
+			once(document,'mouseup',function(){
+				remove(document,'mousemove',mousemove);
 			});
 			startX = e.clientX - parseInt(volumeBtn.style.left);
-		}
-		volumeBtn.onmouseup = function(){
-			document.removeEventListener('mousemove',mousemove);
 		}
 		
 		$("#mytree2").omTree({
