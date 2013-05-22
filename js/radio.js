@@ -162,10 +162,8 @@
 			 {id:"n329",pid:"n30",text:"江西旅友之声FM100.7",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1042930110%26start%3D1369063474%26end%3D1369409074&volumn=0.5&uid=1052710881&eid=1043390840&pageURL=http://radio.weibo.com/china/fm900?source=radio_change'},
 			 {id:"n330",pid:"n30",text:"江西MYFM96.9",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1042929710%26start%3D1369063562%26end%3D1369409162&volumn=0.5&uid=1052710881&eid=1043390840&pageURL=http://radio.weibo.com/china/fm900?source=radio_change'},
 			 {id:"n331",pid:"n30",text:"江西民生广播FM101.9",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1042931510%26start%3D1369063633%26end%3D1369409233&volumn=0.5&uid=1052710881&eid=1043390840&pageURL=http://radio.weibo.com/china/fm900?source=radio_change'},
-			 {id:"n331",pid:"n30",text:"江西民生广播FM101.9",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1042931510%26start%3D1369063633%26end%3D1369409233&volumn=0.5&uid=1052710881&eid=1043390840&pageURL=http://radio.weibo.com/china/fm900?source=radio_change'}
-			 
-			 
-			 ];
+			 {id:"n332",pid:"n30",text:"江西民生广播FM101.9",name:'dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1042931510%26start%3D1369063633%26end%3D1369409233&volumn=0.5&uid=1052710881&eid=1043390840&pageURL=http://radio.weibo.com/china/fm900?source=radio_change'}
+			];
 			 
 	function get(id){
 		return document.getElementById(id);
