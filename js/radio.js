@@ -14,7 +14,7 @@
 	for(var i in config){
 		if(i == '网络'){
 			for(var k in config[i]){
-				str += ',{id:\"n'+index+'\",pid:\"n1\",text:\"'+k+'\",link:\"dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D'+config[i][j]+'%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.99&amp;uid=0&amp;eid='+config[i][j]+'&amp;pageURL=\"}';
+				str += ',{id:\"n'+index+'\",pid:\"n1\",text:\"'+k+'\",link:\"dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D'+config[i][k]+'%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.99&amp;uid=0&amp;eid='+config[i][j]+'&amp;pageURL=\"}';
 				index++;
 			}
 		}
