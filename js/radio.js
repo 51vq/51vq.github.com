@@ -27,7 +27,7 @@
 			index++;
 		}
 	}
-	
+	index = 21;
 	for(var i in config){
 		if(i != '网络'){
 			for(var j in config[i]){
