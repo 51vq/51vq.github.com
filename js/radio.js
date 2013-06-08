@@ -20,7 +20,7 @@
 			index++;
 		}
 	}
-	var str += ',{id:"n2",text:"按地区"}';
+	str += ',{id:"n2",text:"按地区"}';
 	
 	for(var i in config){
 		if(i != '网络'){
