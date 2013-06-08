@@ -15,7 +15,7 @@
 		if(i == '网络'){
 			str += ',{id:"n1",text:"网络电台",expended:true}'; 
 			for(var k in config[i]){
-				str += ',{id:\"n'+index2+'\",pid:\"n1\",text:\"'+j+'\",link:\"dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D'+config[i][j]+'%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.99&amp;uid=0&amp;eid='+config[i][j]+'&amp;pageURL=\"}';
+				str += ',{id:\"n'+index2+'\",pid:\"n1\",text:\"'+k+'\",link:\"dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D'+config[i][j]+'%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.99&amp;uid=0&amp;eid='+config[i][j]+'&amp;pageURL=\"}';
 				index2++;
 			}
 		}else{
