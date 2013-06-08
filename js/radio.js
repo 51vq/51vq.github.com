@@ -14,15 +14,19 @@
 	for(var i in config){
 		if(i == '网络'){
 			for(var k in config[i]){
-				str += ',{id:\"n'+index+'\",pid:\"n1\",text:\"'+k+'\",link:\"dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D'+config[i][k]+'%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.99&amp;uid=0&amp;eid='+config[i][j]+'&amp;pageURL=\"}';
+				str += ',{id:\"n'+index+'\",pid:\"n1\",text:\"'+k+'\",link:\"dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D'+config[i][k]+'%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.99&amp;uid=0&amp;eid='+config[i][k]+'&amp;pageURL=\"}';
 				index++;
 			}
+		}
+	}
+	for(var i in config){
+		if(i != '网络'){
+			str += ',{id:"n'+index+'",pid:"n2",text:"'+i+'"}';
 		}
 	}
 	index = 21;
 	for(var i in config){
 		if(i != '网络'){
-			str += ',{id:"n'+index+'",pid:"n2",text:"'+i+'"}';
 			for(var j in config[i]){
 				str += ',{id:\"n'+index2+'\",pid:\"n'+index+'\",text:\"'+j+'\",link:\"dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D'+config[i][j]+'%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.99&amp;uid=0&amp;eid='+config[i][j]+'&amp;pageURL=\"}';
 				index2++;
