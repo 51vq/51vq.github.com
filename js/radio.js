@@ -43,6 +43,20 @@
 	
 	var data = eval(str);
 	
+	function setCookie(name, value, expires, domain, path) {
+		var date = new Date;
+		if (typeof domain == "number") if (domain === 1) domain = document.domain;
+		domain = typeof domain == "string" ? ";domain=" + domain: "";
+		path = typeof path == "string" ? ";path=" + path: "";
+		expires = typeof expires == "number" ? ";expires=" + new Date(date.setMinutes(date.getMinutes() + expires)).toUTCString() : "";
+		document.cookie = name + "=" + encodeURIComponent(value) + expires + domain + path;
+	}
+	
+	function getCookie(name) {
+		var value = new RegExp("(?:; )?" + name + "=([^;]*);?", "g").exec(document.cookie);
+		return value ? decodeURIComponent(value[1]) : null;
+	}
+	
 	function get(id){
 		return document.getElementById(id);
 	}
@@ -87,7 +101,12 @@
 	}
 	
 	function init(){
-		getFlash('radioAudio').goplay('dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=http://radio.weibo.com/online/crionline2012?source=radioarea_lastlisten');
+		var url = getCookie('link');
+		if(url){
+			getFlash('radioAudio').goplay(url);
+		}else{
+			getFlash('radioAudio').goplay('dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=');
+		}
 		var playBtn = get('playBtn');
 		var volume = 0.5;//音量
 		var isPlay = true;//是否在播放
@@ -155,6 +174,8 @@
 			simpleDataModel: true,
 			onSelect: function(node,event) {
 				playBtn.className = 'ico_rdoPlay ico_stop_gray';
+				setCookie('link',node.link);
+				setCookie('name',node.text);
 				getFlash('radioAudio').goplay(node.link);
 			}
 		});
