@@ -62,7 +62,7 @@ body {
 
 .lf_sound{
   float:left;
-  width:415px;
+  width:25px;
 }
 
 .sound_wds {
@@ -88,11 +88,10 @@ body {
   position: absolute;
 }
 .info{
-  position: relative;
   width:250px;
-  height:60px;
-  left:260px;
-  top:30px;
+  height:30px;
+  top:40px;
+  left:200px;
 }
 .list{
     width:544px;
