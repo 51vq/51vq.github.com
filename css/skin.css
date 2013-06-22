@@ -75,7 +75,7 @@ body {
 .bg_orgsound {
     background: url(../images/bg_player.png) no-repeat scroll 0 -276px;
     height: 20px;
-  margin:0 0;
+    margin:0 0;
 }
 .ico_orgsound {
     background: url(../images/bg_player.png) no-repeat scroll 0 -308px;
@@ -88,10 +88,13 @@ body {
   position: absolute;
 }
 .info{
-  width:250px;
-  height:30px;
-  top:40px;
-  left:200px;
+  width:450px;
+  height:20px;
+  float: right;
+  text-align: center;
+  position: relative;
+  font-weight: normal;
+  top:-70px;
 }
 .list{
     width:544px;
