@@ -99,13 +99,16 @@
 	window.radioReady = function(){
 		setTimeout(init,100);
 	}
-	
+
 	function init(){
 		var url = getCookie('link');
+		var name = getCookie('name');
 		if(url){
 			getFlash('radioAudio').goplay(url);
+			get('info').innerHTML = '<b>‘+name+’</b>';
 		}else{
 			getFlash('radioAudio').goplay('dataURL=http%3A%2F%2Fcdn.kandian.com%2Fmovies%3Fcmd%3Dplay%26id%3D1043389200%26start%3D'+start+'%26end%3D'+end+'&amp;volumn=0.5&amp;uid=1052710881&amp;eid=1043389200&amp;pageURL=');
+			get('info').innerHTML = '<b>CRI怀旧金曲频道-CRIONLINE2012</b>';
 		}
 		var playBtn = get('playBtn');
 		var volume = 0.5;//音量
@@ -176,6 +179,7 @@
 				playBtn.className = 'ico_rdoPlay ico_stop_gray';
 				setCookie('link',node.link);
 				setCookie('name',node.text);
+				get('info').innerHTML = '<b>‘+node.text+’</b>';
 				getFlash('radioAudio').goplay(node.link);
 			}
 		});
